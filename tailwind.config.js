@@ -10,7 +10,8 @@ export default {
         primary: '#FFa500' 
       },
       backgroundColor:{
-        primary: '#FFa500' 
+        primary: '#FFa500' ,
+        secondary:'#ECF0F1'
       }
     },
   },
