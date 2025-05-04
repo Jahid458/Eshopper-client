@@ -39,10 +39,9 @@ const Footer = () => {
         {/* Contact Info */}
         <nav>
           <h6 className="footer-title">Contact Info</h6>
-          <p className="text-sm font-bold">Address : 86/A Gulshan Dhaka</p>
-          <p className="text-sm font-bold">Email : Eshopper@email.com</p>
-          <p className="text-sm font-bold">Opening Time:</p>
-          <span className="text-primary font-bold">Mon-Sat, 8.00AM - 12.00 PM</span>
+          <p className="text-sm ">Address : 86/A Gulshan Dhaka</p>
+          <p className="text-sm ">Email : Eshopper@email.com</p>
+          <p className="text-sm ">Opening Time:Mon-Sat, 8.00AM - 12.00 PM</p>
         </nav>
 
         {/* Useful Links */}
