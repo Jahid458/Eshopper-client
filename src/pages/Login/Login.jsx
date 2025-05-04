@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Login = () => {
   return (
-    <div className="flex items-center justify-center mt-10">
+    <div className="flex items-center justify-center mt-36">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-xl shadow-lg">
         <h2 className="text-2xl font-bold text-center text-gray-700">
           Login to your account
@@ -28,7 +29,7 @@ export const Login = () => {
               required
             />
           </div>
-          <span className='block mt-2'>Forgot Password</span>
+          <span className='block mt-2 text-orange-500'>Forgot Password</span>
         
           <button
             type="submit"
@@ -38,14 +39,14 @@ export const Login = () => {
           </button>
         </form>
 
-        <div className="flex items-center justify-center">
-          <span className="text-sm text-gray-500">or</span>
-        </div>
+        <p className='mt-2 text-center '>Don't You have an account? <Link className='text-primary'>Register</Link> </p>
 
-        <button
-          className="w-full flex items-center justify-center gap-2 py-2 border rounded-md hover:bg-gray-100 transition"
-          onClick={() => alert('Google login triggered')}
-        >
+
+        <div className="flex items-center justify-center divider">
+          <span className="text-sm text-gray-500 ">or</span>
+        </div>  
+       
+        <button className="w-full flex items-center justify-center gap-2 py-2 border rounded-md hover:bg-gray-100 transition">
           <img
             src="https://www.svgrepo.com/show/475656/google-color.svg"
             alt="Google"
@@ -53,6 +54,7 @@ export const Login = () => {
           />
           <span className="text-sm text-gray-700 font-medium">Continue with Google</span>
         </button>
+          
       </div>
     </div>
   );
