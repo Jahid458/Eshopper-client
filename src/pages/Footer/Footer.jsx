@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import navlogo from "/eshoplogo.png";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
@@ -29,10 +29,9 @@ const Footer = () => {
           </div>
           <p className="text-sm mt-2">
             Eshopper is your one-stop destination for trendy electronics and cloths.
-            <br />
             Discover unbeatable deals, fast delivery and a seamless shopping experience.
             <br />
-            Shop smart, shop easy — only at Eshopper.
+            Shop smart, shop easy — only at <span className="text-primary">Eshopper</span>.
           </p>
         </aside>
 

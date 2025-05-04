@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Login = () => {
   return (
-    <div className="flex items-center justify-center mt-36">
+    <div className="flex items-center justify-center lg:mt-36 mt-7">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-xl shadow-lg">
         <h2 className="text-2xl font-bold text-center text-gray-700">
           Login to your account
@@ -23,7 +23,7 @@ export const Login = () => {
           <div>
             <label className="block mb-1 text-sm font-medium text-gray-700">Password</label>
             <input
-              type="password"
+        
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
               placeholder="••••••••"
               required
@@ -39,7 +39,7 @@ export const Login = () => {
           </button>
         </form>
 
-        <p className='mt-2 text-center '>Don't You have an account? <Link className='text-primary'>Register</Link> </p>
+        <p className='mt-2 text-center text-sm lg:text-base'>Don't You have an account? <Link className='text-primary' to='/register'>Register</Link> </p>
 
 
         <div className="flex items-center justify-center divider">
