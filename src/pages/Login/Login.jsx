@@ -10,7 +10,7 @@ export const Login = () => {
 
         <form className="space-y-4">
           <div>
-            <label className="block mb-1 text-sm font-medium text-gray-700">Email</label>
+            <label className="block mb-1 text-sm font-medium text-gray-700">Email </label>
             <input
               type="email"
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
@@ -29,7 +29,7 @@ export const Login = () => {
             />
           </div>
           <span className='block mt-2'>Forgot Password</span>
-
+        
           <button
             type="submit"
             className="w-full py-2 font-semibold text-white bg-primary rounded-md hover:bg-orange-500 transition"
