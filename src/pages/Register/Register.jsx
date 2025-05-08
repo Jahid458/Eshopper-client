@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import logo from "/eshoplogo.png";
 import ecommerceImage from "/loginbg.jpg";
+import useAuth from '../../hooks/useAuth';
 
 export const Register = () => {
-
+   const {createUser} = useAuth();
   
   useEffect(() => {
     const canvas = document.createElement('canvas');
@@ -62,9 +63,18 @@ export const Register = () => {
     };
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
-    console.log('register done');
+    const form = e.target ; 
+    const email = form.email.value;
+    const password= form.password.value ;
+    // const image = form.image.files[0];
+    console.log(email,password);
+    createUser(email,password)
+    .then(result => {
+      const loggedUser = result.user; 
+      console.log(loggedUser); 
+    })
   };
 
   return (
@@ -101,7 +111,7 @@ export const Register = () => {
           <h2 className="text-xl font-bold text-center text-gray-800">CREATE YOUR ACCOUNT</h2>
           <p className="text-center text-gray-500 text-sm mt-1 mb-5">Join our community today</p>
 
-          <form onSubmit={handleSubmit} className="space-y-3">
+          <form onSubmit={handleRegister} className="space-y-3">
             <div>
               <label className="block text-xs font-medium text-gray-600 mb-1">EMAIL</label>
               <input

@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import logo from "/eshoplogo.png";
 import ecommerceImage from "/loginbg.jpg";
+import useAuth from '../../hooks/useAuth';
 
 export const Login = () => {
+
+  const {signInUser} = useAuth();
 
 
   const handleLogin = (e) =>{
@@ -12,7 +15,13 @@ export const Login = () => {
       const form = e.target; 
       const email = form.email.value; 
       const password = form.password.value;
-      console.log(email,password)
+      console.log(email,password);
+      signInUser(email,password)
+      .then(result => {
+          const user = result.user;
+          console.log(user);
+          
+      })
   }
 
   useEffect(() => {
