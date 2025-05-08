@@ -4,9 +4,12 @@ import { motion } from 'framer-motion';
 import logo from "/eshoplogo.png";
 import ecommerceImage from "/loginbg.jpg";
 import useAuth from '../../hooks/useAuth';
+import { pictureUpload } from '../../api/utils';
+import { toast } from 'react-toastify';
+
 
 export const Register = () => {
-   const {createUser} = useAuth();
+   const {createUser,setUsers,updateUserProfile} = useAuth();
   
   useEffect(() => {
     const canvas = document.createElement('canvas');
@@ -63,18 +66,28 @@ export const Register = () => {
     };
   }, []);
 
-  const handleRegister = (e) => {
+  const handleRegister = async(e) => {
     e.preventDefault();
     const form = e.target ; 
     const email = form.email.value;
     const password= form.password.value ;
-    // const image = form.image.files[0];
-    console.log(email,password);
-    createUser(email,password)
-    .then(result => {
-      const loggedUser = result.user; 
-      console.log(loggedUser); 
-    })
+    const image = form.image.files[0];
+    const photoURL = await pictureUpload(image)
+
+    console.log(email,password,image);
+
+    try {
+      const result = await createUser(email,password); 
+      setUsers(result.user);
+      console.log(result.user);
+      toast.success('successfully Register'); 
+
+
+      
+      
+    } catch (error) {
+      toast.error(error.message)
+    }
   };
 
   return (
