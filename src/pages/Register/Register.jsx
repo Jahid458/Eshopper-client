@@ -79,7 +79,7 @@ export const Register = () => {
     try {
       const result = await createUser(email,password); 
       setUsers(result.user);
-      console.log(result.user);
+      // console.log(result.user);
       toast.success('successfully Register'); 
 
 
