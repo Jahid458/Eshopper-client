@@ -72,7 +72,7 @@ export const Register = () => {
     const email = form.email.value;
     const password= form.password.value ;
     const image = form.image.files[0];
-    const photoURL = await pictureUpload(image)
+    const photo = await pictureUpload(image)
 
     console.log(email,password,image);
 
@@ -80,10 +80,10 @@ export const Register = () => {
       const result = await createUser(email,password); 
       setUsers(result.user);
       // console.log(result.user);
+      await updateUserProfile({displayName: name, photoURL: photo})
+       // user save database
+      //  await userSave({...result?.user, displayName: name, photoURL: photo})
       toast.success('successfully Register'); 
-
-
-      
       
     } catch (error) {
       toast.error(error.message)

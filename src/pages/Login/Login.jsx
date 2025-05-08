@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import logo from "/eshoplogo.png";
 import ecommerceImage from "/loginbg.jpg";
+import { toast } from 'react-toastify';
 import useAuth from '../../hooks/useAuth';
 
 export const Login = () => {
 
-  const {signInUser} = useAuth();
+  const {signInUser,setUsers} = useAuth();
 
 
   const handleLogin = (e) =>{
@@ -16,11 +17,16 @@ export const Login = () => {
       const email = form.email.value; 
       const password = form.password.value;
       console.log(email,password);
+
+      
       signInUser(email,password)
       .then(result => {
-          const user = result.user;
-          console.log(user);
-          
+           setUsers(result.user);
+          console.log(result.user);
+          toast.success('Sucessfully Login')
+      })
+      .catch(error => {
+        toast.error(error.message)
       })
   }
 
